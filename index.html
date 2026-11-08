@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Rye&family=Alex+Brush&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/style.css?v=28">
-  <script src="JS/script.js?v=28" defer></script>
+  <link rel="stylesheet" href="style.css?v=34">
+  <script src="script.js?v=34" defer></script>
 </head>
 <body>
 
@@ -354,7 +354,11 @@
         <div class="filet" aria-hidden="true"><svg><use href="#etoile"/></svg></div>
         <p class="pc-intro" data-apparait>Un portrait pas si chinois que cela. En tout cas son origine ne vient pas de l’Orient. Venez découvrir ici – de deux manières différentes&nbsp;: par la personnalité et par le goût – qui je suis.</p>
         <div class="pc-intro-bouton"><button class="bouton bouton-encre avis-neuf-bouton" type="button" data-dialogue="pc-histoire" aria-haspopup="dialog"><svg class="icone-bouton icone-livre" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6C10 4.5 6.5 4 3 4.5v14c3.5-.5 7 0 9 1.5 2-1.5 5.5-2 9-1.5v-14C17.5 4 14 4.5 12 6z"/><path d="M12 6v14"/><path class="feuille" d="M12 6c1.7-1 4-1.4 6.5-1.2v12.6c-2.5-.2-4.8.2-6.5 1.2z" fill="currentColor" fill-opacity=".25"/></svg> Découvrir l’histoire du portrait chinois</button>
-          <button class="bouton bouton-contour-encre pc-bascule" id="pc-bascule" type="button" aria-controls="pc-personnalite pc-gouts"><svg class="icone-bouton icone-bascule" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8h11l-3-3M17 16H6l3 3"/></svg> <span class="pc-bascule-texte">Voir le portrait chinois basé sur mes goûts</span></button></div>
+          <button class="bouton bouton-contour-encre pc-bascule" id="pc-bascule" type="button" aria-controls="pc-personnalite pc-gouts"><svg class="icone-bouton icone-bascule" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8h11l-3-3M17 16H6l3 3"/></svg> <span class="pc-bascule-texte">Voir le portrait chinois basé sur mes goûts</span></button>
+          <div class="pc-autres" id="pc-autres" hidden>
+            <button class="bouton bouton-contour-encre" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="pc-autres-menu"><span>Voir mes autres goûts</span> <svg class="icone-bouton pc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <ul class="pc-autres-menu" id="pc-autres-menu" role="menu" hidden><li role="none"><button role="menuitem" type="button" data-cat="couleurs">Les couleurs</button></li><li role="none"><button role="menuitem" type="button" data-cat="boissons">Les boissons</button></li><li role="none"><button role="menuitem" type="button" data-cat="bonbons">Les bonbons</button></li><li role="none"><button role="menuitem" type="button" data-cat="oiseaux">Les oiseaux</button></li><li role="none"><button role="menuitem" type="button" data-cat="fleurs">Les fleurs</button></li><li role="none"><button role="menuitem" type="button" data-cat="fruits">Les fruits</button></li><li role="none"><button role="menuitem" type="button" data-cat="legumes">Les légumes</button></li><li role="none"><button role="menuitem" type="button" data-cat="forces">Les forces</button></li></ul>
+          </div></div>
         <div class="pc-banniere" data-apparait>
           <div class="pc-banniere-cadre"><img src="images/portrait-titre.webp" width="1200" height="655" alt="Ari Stophane, nom écrit en lettres calligraphiées à l’aquarelle, entouré de petits symboles : boussole, soleil, plume, masque, cœur et lion"></div>
         </div>
@@ -541,6 +545,481 @@
           </div>
         </li>
         </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-couleurs" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les couleurs</h3>
+            <p class="pc-partie-note">Les teintes qui me ressemblent, des plus douces aux plus lumineuses.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-01.webp" width="640" height="640" alt="Aquarelle : un bouquet serré de roses roses vues de dessus"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une couleur,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Rose.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-02.webp" width="640" height="640" alt="Aquarelle : une pierre turquoise veinée de brun, sur un fond bleu nuit parsemé de poussière d’étoiles"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une couleur,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Turquoise.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-boissons" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les boissons</h3>
+            <p class="pc-partie-note">Les verres qui me font plaisir, du jus ensoleillé au grand verre de lait.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-03.webp" width="640" height="640" alt="Aquarelle : un verre de jus d’orange avec une rondelle d’orange, et des oranges coupées devant"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une boisson,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le jus d’orange.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-04.webp" width="640" height="640" alt="Aquarelle : un verre de jus de pomme entouré de pommes vertes et rouges, sous un pommier ensoleillé"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une boisson,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le jus de pomme.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-05.webp" width="640" height="640" alt="Aquarelle : un verre de lait posé sur une serviette à pois rouges"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une boisson,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le lait.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/autre-06.webp" width="640" height="640" alt="Aquarelle : un verre de jus de raisin entouré de grappes de raisin rouge et noir"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une boisson,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le jus de raisin.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-bonbons" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les bonbons</h3>
+            <p class="pc-partie-note">Mes petites douceurs préférées, celles qu’on garde au fond d’une poche.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-01.webp" width="640" height="640" alt="Aquarelle : un tas de bonbons arrondis et multicolores, rouges, bleus, verts, jaunes et noirs"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">les Dragibus.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-02.webp" width="640" height="640" alt="Aquarelle : une fraise Tagada rouge, couverte de sucre"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une fraise Tagada.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-03.webp" width="640" height="640" alt="Aquarelle : des bonbons gélifiés en forme de Schtroumpfs bleus, au bonnet jaune ou rouge"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Schtroumpf.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-04.webp" width="640" height="640" alt="Aquarelle : trois bonbons gélifiés en forme de crocodile, un jaune, un vert et un rose"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Crocodile.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-05.webp" width="640" height="640" alt="Aquarelle : des bonbons gélifiés en forme de bouteilles de cola"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Bouteille cola.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-06.webp" width="640" height="640" alt="Aquarelle : des langues de bonbon rayées de toutes les couleurs, enroulées les unes sur les autres"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Langue multicolore.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-07.webp" width="640" height="640" alt="Aquarelle : des bonbons gélifiés en forme d’œufs au plat"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">des Œufs au plat.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-08.webp" width="640" height="640" alt="Aquarelle : un tas de bananes gélifiées jaunes"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Banane gélifiée.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-09.webp" width="640" height="640" alt="Aquarelle : six bonbons Maoam Bloxx de saveurs différentes, dans leurs emballages colorés"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Maoam.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-10.webp" width="640" height="640" alt="Aquarelle : des bonbons Krema emballés et un bonbon rose déballé"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Krema.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-11.webp" width="640" height="640" alt="Aquarelle : un tas de Carambar et de petits bonbons rayés aux emballages colorés"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Carambar.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-12.webp" width="640" height="640" alt="Aquarelle : cinq sucettes Chupa Chups de saveurs différentes"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Sucette Chupa Chups.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-13.webp" width="640" height="640" alt="Aquarelle : un tas de chamallows roses et blancs"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">des Chamallows.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-14.webp" width="640" height="640" alt="Aquarelle : un ourson en chocolat et un bonbon à la guimauve coupé en deux"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">des Oursons à la guimauve.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-15.webp" width="640" height="640" alt="Aquarelle : des bonbons gélifiés acidulés en forme de frites, jaunes, verts et rouges"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Frite gélifiée.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-16.webp" width="640" height="640" alt="Aquarelle : des scoubidous en bonbon acidulé, rouges, bleus, verts et jaunes, emmêlés"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Scoubidou.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-17.webp" width="640" height="640" alt="Aquarelle : des bonbons roses et blancs en forme de tétine qui sortent d’un bocal en verre"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Tétine.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-18.webp" width="640" height="640" alt="Aquarelle : deux colliers de bonbons aux teintes pastel"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Collier de bonbons.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/bonbon-19.webp" width="640" height="640" alt="Aquarelle : des ceintures acidulées arc-en-ciel enchevêtrées"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un bonbon,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Ceinture acidulée.</em></span></p>
+              </div>
+            </li>
+          </ol>
+          <p class="pc-note-marques">Les marques citées appartiennent à leurs propriétaires respectifs et sont mentionnées à titre purement illustratif.</p>
+        </div>
+        <div class="pc-portrait" id="pc-cat-oiseaux" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les oiseaux</h3>
+            <p class="pc-partie-note">Les plumes et les chants qui me font lever les yeux.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-01.webp" width="640" height="640" alt="Aquarelle : un colibri aux reflets bleus et verts qui butine une fleur rose"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Colibri.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-02.webp" width="640" height="640" alt="Aquarelle : une colombe blanche aux ailes ouvertes qui tient un rameau d’olivier dans son bec"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Colombe.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-03.webp" width="640" height="640" alt="Aquarelle : un aigle royal perché sur un rocher, devant une vallée de montagne"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Aigle royal.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-04.webp" width="640" height="640" alt="Aquarelle : un aigle impérial perché sur une branche"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Aigle impérial.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-05.webp" width="640" height="640" alt="Aquarelle : un milan royal en plein vol dans un ciel bleu"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Milan royal.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-06.webp" width="640" height="640" alt="Aquarelle : un flamant rose debout sur une patte dans l’eau, au crépuscule"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Flamant rose.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-07.webp" width="640" height="640" alt="Aquarelle : un paon qui fait la roue dans un jardin fleuri"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Paon.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/oiseau-08.webp" width="640" height="640" alt="Aquarelle : une chouette effraie perchée sur un poteau en bois, dans un champ de blé doré"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un oiseau,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Chouette effraie.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-fleurs" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les fleurs</h3>
+            <p class="pc-partie-note">Les corolles et les parfums qui égayent mes journées.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fleur-01.webp" width="640" height="640" alt="Aquarelle : un trèfle à quatre feuilles couvert de gouttes de rosée"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une fleur,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Trèfle.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fleur-02.webp" width="640" height="640" alt="Aquarelle : des lys blancs aux étamines jaunes"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une fleur,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">un Lys.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fleur-03.webp" width="640" height="640" alt="Aquarelle : une tulipe rose couverte de gouttes de rosée, au milieu d’un champ fleuri"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une fleur,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">une Tulipe.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-fruits" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les fruits</h3>
+            <p class="pc-partie-note">Les saveurs sucrées et juteuses que je croque avec plaisir.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-01.webp" width="640" height="640" alt="Aquarelle : une framboise couverte de gouttes d’eau"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Framboise.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-02.webp" width="640" height="640" alt="Aquarelle : une grappe de raisin noir sur la vigne"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Raisin.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-03.webp" width="640" height="640" alt="Aquarelle : un kiwi coupé en deux, posé sur une table en bois"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Kiwi.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-04.webp" width="640" height="640" alt="Aquarelle : des abricots mûrs sur une branche, parmi les feuilles"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Abricot.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-05.webp" width="640" height="640" alt="Aquarelle : un régime de bananes jaunes entouré de grandes feuilles"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Banane.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-06.webp" width="640" height="640" alt="Aquarelle : un melon coupé en deux, avec ses pépins"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Melon.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-07.webp" width="640" height="640" alt="Aquarelle : une pomme rouge suspendue à une branche"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Pomme.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-08.webp" width="640" height="640" alt="Aquarelle : une poire posée sur un fond vert olive"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Poire.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-09.webp" width="640" height="640" alt="Aquarelle : des clémentines sur une branche, au soleil"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Clémentine.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/fruit-10-aq.webp" width="640" height="640" alt="Aquarelle : une myrtille couverte de gouttes d’eau, entourée d’autres myrtilles bleu-violet"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un fruit,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Myrtille.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-legumes" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les légumes</h3>
+            <p class="pc-partie-note">Les trésors du potager que j’aime retrouver dans mon assiette.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-01.webp" width="640" height="640" alt="Aquarelle : une salade frisée aux feuilles vert tendre et vert foncé"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Salade.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-02.webp" width="640" height="640" alt="Aquarelle : des feuilles d’épinard couvertes de gouttes d’eau"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Épinard.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-03.webp" width="640" height="640" alt="Aquarelle : un brocoli vert posé sur une surface grise"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Brocoli.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-04.webp" width="640" height="640" alt="Aquarelle : une courgette sur sa plante, parmi ses fleurs jaunes"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Courgette.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-05.webp" width="640" height="640" alt="Aquarelle : des concombres couverts de gouttes d’eau"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Concombre.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-06.webp" width="640" height="640" alt="Aquarelle : des cornichons dans un bocal en verre"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Cornichon.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/legume-07.webp" width="640" height="640" alt="Aquarelle : un chou-fleur entouré de ses feuilles vertes"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être un légume,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Chou-fleur.</em></span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="pc-portrait" id="pc-cat-forces" hidden>
+          <div class="pc-partie" data-apparait>
+            <h3 class="pc-partie-titre">Les forces</h3>
+            <p class="pc-partie-note">Les qualités sur lesquelles je m’appuie pour avancer.</p>
+            <button class="pc-lien-retour" type="button" data-vue="pc-gouts">← Retour au portrait chinois de mes goûts</button>
+          </div>
+          <ol class="pc-liste">
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-01.webp" width="640" height="640" alt="Aquarelle : deux randonneurs qui montent un sentier rocailleux vers le soleil levant"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Persévérance.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-02.webp" width="640" height="640" alt="Aquarelle : un randonneur au sommet d’une montagne, face à un lac et à des sommets lointains"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Ambition.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-03.webp" width="640" height="640" alt="Aquarelle : un jeune homme qui aide une dame âgée à traverser la rue en lui tenant la main"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Gentillesse.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-04.webp" width="640" height="640" alt="Aquarelle : des mains qui se partagent une grande omelette et plusieurs plats autour d’une table"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Générosité.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-05.webp" width="640" height="640" alt="Aquarelle : deux personnes qui se tiennent les mains avec douceur"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Bienveillance.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-06.webp" width="640" height="640" alt="Aquarelle : deux amies qui marchent bras dessus, bras dessous en se souriant"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Loyauté.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-07.webp" width="640" height="640" alt="Aquarelle : une personne aux cheveux bouclés qui serre dans ses bras une jeune fille blottie contre elle"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Empathie.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-08.webp" width="640" height="640" alt="Aquarelle : une main âgée qui tient délicatement un tout petit chaton"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Compassion.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-respect.webp" width="640" height="640" alt="Aquarelle : un petit coléoptère noir posé délicatement sur une main ornée d’une bague dorée"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">le Respect.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-09.webp" width="640" height="640" alt="Aquarelle : un livre ouvert sur lequel sont posées des lunettes roses"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Intelligence.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-10.webp" width="640" height="640" alt="Aquarelle : une main qui peint avec un pinceau sur une toile aux couleurs vives"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Créativité.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-11.webp" width="640" height="640" alt="Aquarelle : des pièces d’un jeu d’échecs, dont une tour dorée"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">la Logique.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-12.webp" width="640" height="640" alt="Aquarelle : un enfant aux boucles blondes qui regarde un ciel bleu parsemé de nuages"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Imagination.</em></span></p>
+              </div>
+            </li>
+            <li class="pc-item" data-apparait>
+              <figure class="pc-cadre"><img loading="lazy" decoding="async" src="images/force-13.webp" width="640" height="640" alt="Aquarelle : deux jeunes femmes qui sautent de joie, les bras levés vers le ciel"></figure>
+              <div class="pc-texte">
+                <p class="pc-phrase"><span class="pc-lead">Si j’avais pu être une force,</span> <span class="pc-suite">j’aurais été <em class="pc-reponse">l’Enthousiasme.</em></span></p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
