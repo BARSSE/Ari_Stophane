@@ -1050,19 +1050,31 @@
   });
 })();
 
-/* Portrait chinois : bascule entre « ma personnalité » (par défaut) et « mes goûts » */
+/* Portrait chinois : personnalité (par défaut), goûts, et catégories « autres goûts » */
 (() => {
-  const b = document.getElementById('pc-bascule'), A = document.getElementById('pc-personnalite'), B = document.getElementById('pc-gouts');
-  if (!b || !A || !B) return;
-  const txt = b.querySelector('.pc-bascule-texte'), calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let gouts = false, occupe = false;
-  b.addEventListener('click', () => {
-    if (occupe) return; occupe = true;
-    const sort = gouts ? B : A, entre = gouts ? A : B; sort.classList.add('pc-sort'); b.classList.add('tourne');
+  const bas = document.getElementById('pc-bascule'), autres = document.getElementById('pc-autres'), menu = document.getElementById('pc-autres-menu');
+  if (!bas || !autres || !menu || !document.getElementById('pc-gouts')) return;
+  const calme = matchMedia('(prefers-reduced-motion: reduce)').matches, txt = bas.querySelector('.pc-bascule-texte'), bAutres = autres.querySelector('button');
+  let courant = 'pc-personnalite', occupe = false;
+  const maj = () => {
+    txt.textContent = courant === 'pc-personnalite' ? 'Voir le portrait chinois basé sur mes goûts' : 'Voir le portrait chinois basé sur ma personnalité';
+    autres.hidden = courant === 'pc-personnalite';
+    menu.querySelectorAll('[data-cat]').forEach((b) => { if ('pc-cat-' + b.dataset.cat === courant) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+  };
+  const aller = (id) => {
+    if (occupe || id === courant) return; occupe = true;
+    const sort = document.getElementById(courant), entre = document.getElementById(id); sort.classList.add('pc-sort'); bas.classList.add('tourne');
     setTimeout(() => {
-      sort.hidden = true; sort.classList.remove('pc-sort'); entre.hidden = false; entre.classList.add('pc-entre'); gouts = !gouts;
-      txt.textContent = gouts ? 'Voir le portrait chinois basé sur ma personnalité' : 'Voir le portrait chinois basé sur mes goûts';
-      setTimeout(() => { entre.classList.remove('pc-entre'); b.classList.remove('tourne'); occupe = false; }, calme ? 0 : 700);
+      sort.hidden = true; sort.classList.remove('pc-sort'); entre.hidden = false; entre.classList.add('pc-entre'); courant = id; maj();
+      setTimeout(() => { entre.classList.remove('pc-entre'); bas.classList.remove('tourne'); occupe = false; }, calme ? 0 : 700);
     }, calme ? 0 : 380);
-  });
+  };
+  const ferme = () => { menu.hidden = true; bAutres.setAttribute('aria-expanded', 'false'); };
+  bas.addEventListener('click', () => aller(courant === 'pc-personnalite' ? 'pc-gouts' : 'pc-personnalite'));
+  bAutres.addEventListener('click', () => { const ouvre = menu.hidden; menu.hidden = !ouvre; bAutres.setAttribute('aria-expanded', String(ouvre)); });
+  menu.querySelectorAll('[data-cat]').forEach((b) => b.addEventListener('click', () => { ferme(); aller('pc-cat-' + b.dataset.cat); }));
+  document.querySelectorAll('[data-vue]').forEach((b) => b.addEventListener('click', () => aller(b.dataset.vue)));
+  document.addEventListener('click', (e) => { if (!autres.contains(e.target)) ferme(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ferme(); });
+  maj();
 })();
