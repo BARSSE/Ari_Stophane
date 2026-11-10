@@ -1849,3 +1849,94 @@ a:hover .icone-boite .couvercle { animation: none; transform: translateY(-3px) r
 @keyframes pc-menu-descend { from { opacity: 0; transform: translateX(-50%) translateY(-12px); } }
 @media (prefers-reduced-motion: reduce) { .pc-autres-menu, .pc-autres > .bouton { animation: none; } }
 .pc-note-marques { max-width: 640px; margin: 2.5rem auto 0; text-align: center; font: italic 400 .9rem/1.5 var(--texte); color: var(--violet); opacity: .85; }
+
+/* Portrait chinois : texte qui apparaît au survol (ou au toucher) de l'image */
+.pc-cadre[tabindex] { cursor: help; }
+.pc-cadre[tabindex]:focus-visible { outline: 3px solid var(--or); outline-offset: 7px; }
+.pc-voile { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; padding: 2.4rem 1.3rem 3.2rem; overflow: hidden; text-align: center; pointer-events: none; opacity: 0; transition: opacity .55s ease; }
+.pc-voile > * { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .8s cubic-bezier(.3, 1.2, .5, 1), letter-spacing 1s ease, filter .8s ease; }
+.pc-voile-orn { width: 1.6rem; height: 1.6rem; margin-bottom: .1rem; color: var(--or); transform: translateY(16px) rotate(-30deg) scale(.6); }
+.pc-voile-titre { font: normal 400 clamp(1.9rem, 5.2vw, 2.7rem)/1.05 var(--calligraphie); letter-spacing: .25em; filter: blur(5px); }
+.pc-voile-accroche { font: italic 700 clamp(.82rem, 1.9vw, 1rem)/1.35 var(--texte); letter-spacing: .02em; }
+.pc-voile-texte { font: 400 var(--t, clamp(.74rem, 1.55vw, .92rem))/1.5 var(--texte); }
+.pc-cadre:hover .pc-voile, .pc-cadre:focus-within .pc-voile, .pc-cadre.touche .pc-voile { opacity: 1; }
+.pc-cadre:hover .pc-voile > *, .pc-cadre:focus-within .pc-voile > *, .pc-cadre.touche .pc-voile > * { opacity: 1; transform: none; }
+.pc-cadre:hover .pc-voile-orn, .pc-cadre:focus-within .pc-voile-orn, .pc-cadre.touche .pc-voile-orn { transform: rotate(0) scale(1); transition-delay: .05s; }
+.pc-cadre:hover .pc-voile-titre, .pc-cadre:focus-within .pc-voile-titre, .pc-cadre.touche .pc-voile-titre { letter-spacing: .03em; filter: none; transition-delay: .15s; }
+.pc-cadre:hover .pc-voile-accroche, .pc-cadre:focus-within .pc-voile-accroche, .pc-cadre.touche .pc-voile-accroche { transition-delay: .4s; }
+.pc-cadre:hover .pc-voile-texte, .pc-cadre:focus-within .pc-voile-texte, .pc-cadre.touche .pc-voile-texte { transition-delay: .6s; }
+.pc-cadre[tabindex] img { transition: filter .6s ease; }
+.pc-cadre[tabindex]:hover img, .pc-cadre[tabindex]:focus-within img, .pc-cadre.touche img { filter: brightness(.42) saturate(.85) blur(1.5px); }
+.pc-cadre:hover::after, .pc-cadre:focus-within::after, .pc-cadre.touche::after { opacity: 0; }
+.pc-cadre::after { transition: opacity .3s; }
+/* Les forces : voile violet et or, grande calligraphie */
+#pc-cat-forces .pc-voile { color: #fbeedd; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(88, 36, 120, .72), rgba(43, 18, 54, .93)); }
+#pc-cat-forces .pc-voile-titre { color: var(--or); text-shadow: 0 0 18px rgba(255, 207, 90, .55); }
+#pc-cat-forces .pc-voile-accroche { color: #ffe4a8; }
+/* Les légumes : voile vert de potager, italique et petites capitales */
+#pc-cat-legumes .pc-voile { color: #f4f8e4; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(34, 92, 52, .74), rgba(12, 40, 24, .94)); }
+#pc-cat-legumes .pc-voile-titre { font: italic 700 clamp(1.5rem, 4.2vw, 2.1rem)/1.1 var(--texte); font-variant: small-caps; color: #dcf0a8; text-shadow: 0 2px 10px rgba(0, 0, 0, .4); }
+#pc-cat-legumes .pc-voile-orn { color: #b9e07a; }
+#pc-cat-legumes .pc-voile-accroche { color: #e9f6c4; }
+@media (prefers-reduced-motion: reduce) { .pc-voile, .pc-voile > *, .pc-cadre[tabindex] img { transition: none; } .pc-voile-titre { letter-spacing: .03em; filter: none; } }
+/* Écrans tactiles : le texte ne reste que sur l'image touchée (pas de « survol collant ») */
+@media (hover: none) {
+  .pc-cadre:not(.touche):not(:focus-within) .pc-voile { opacity: 0; }
+  .pc-cadre:not(.touche):not(:focus-within) .pc-voile > * { opacity: 0; transform: translateY(16px); }
+  .pc-cadre:not(.touche):not(:focus-within) .pc-voile-orn { transform: translateY(16px) rotate(-30deg) scale(.6); }
+  .pc-cadre:not(.touche):not(:focus-within) .pc-voile-titre { letter-spacing: .25em; filter: blur(5px); }
+  .pc-cadre[tabindex]:not(.touche):not(:focus-within) img { filter: none; }
+  .pc-cadre:not(.touche):not(:focus-within)::after { opacity: 1; }
+}
+
+/* Fleurs : voile rose et lilas ; fruits : voile corail ; oiseaux : voile bleu nuit */
+#pc-cat-fleurs .pc-voile { color: #fdeaf3; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(150, 52, 112, .72), rgba(58, 18, 52, .94)); }
+#pc-cat-fleurs .pc-voile-titre { color: #ffc9e2; text-shadow: 0 0 18px rgba(255, 170, 210, .55); }
+#pc-cat-fleurs .pc-voile-accroche { color: #ffe3f0; }
+#pc-cat-fleurs .pc-voile-orn { color: #ffb6d6; }
+#pc-cat-fruits .pc-voile { color: #fff0e2; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(196, 70, 44, .72), rgba(74, 22, 16, .94)); }
+#pc-cat-fruits .pc-voile-titre { color: #ffd9a2; text-shadow: 0 0 18px rgba(255, 190, 110, .55); }
+#pc-cat-fruits .pc-voile-accroche { color: #ffe9c2; }
+#pc-cat-fruits .pc-voile-orn { color: #ffc27a; }
+#pc-cat-oiseaux .pc-voile { color: #e9f3ff; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(36, 78, 128, .74), rgba(10, 22, 46, .95)); }
+#pc-cat-oiseaux .pc-voile-titre { color: #cfe6ff; text-shadow: 0 0 18px rgba(150, 200, 255, .55); }
+#pc-cat-oiseaux .pc-voile-accroche { color: #e6f1ff; }
+#pc-cat-oiseaux .pc-voile-orn { color: #9fcbff; }
+/* Petits écrans : plus de place pour les textes longs */
+@media (max-width: 560px) {
+  .pc-voile { gap: .3rem; padding: 1.3rem .9rem 1.9rem; }
+  .pc-voile-orn { display: none; }
+  .pc-voile-titre { font-size: 1.55rem; }
+  .pc-voile-accroche { font-size: .78rem; }
+  .pc-voile-texte { font-size: calc(var(--t, .8rem) * .9); line-height: 1.42; }
+}
+
+/* Boissons : voile ambré ; bonbons : voile framboise et rose bonbon */
+#pc-cat-boissons .pc-voile { color: #fff3dc; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(190, 112, 24, .72), rgba(70, 36, 8, .94)); }
+#pc-cat-boissons .pc-voile-titre { color: #ffd98a; text-shadow: 0 0 18px rgba(255, 200, 100, .55); }
+#pc-cat-boissons .pc-voile-accroche { color: #ffe8b8; }
+#pc-cat-boissons .pc-voile-orn { color: #ffcf70; }
+#pc-cat-bonbons .pc-voile { color: #ffeef6; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(190, 40, 110, .72), rgba(66, 12, 48, .94)); }
+#pc-cat-bonbons .pc-voile-titre { color: #ffb8da; text-shadow: 0 0 18px rgba(255, 140, 200, .6); }
+#pc-cat-bonbons .pc-voile-accroche { color: #ffdcee; }
+#pc-cat-bonbons .pc-voile-orn { color: #ffa5d0; }
+
+/* Couleurs : voile rose puis turquoise ; portrait des goûts : voile violet et or avec le genre au-dessus du titre */
+#pc-cat-couleurs .pc-voile { color: #fff1f6; }
+#pc-cat-couleurs .pc-item:nth-child(1) .pc-voile { background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(214, 90, 140, .72), rgba(86, 20, 52, .94)); }
+#pc-cat-couleurs .pc-item:nth-child(1) .pc-voile-titre { color: #ffc4dc; text-shadow: 0 0 18px rgba(255, 150, 200, .55); }
+#pc-cat-couleurs .pc-item:nth-child(2) .pc-voile { color: #e8fbf8; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(24, 150, 160, .72), rgba(8, 50, 62, .95)); }
+#pc-cat-couleurs .pc-item:nth-child(2) .pc-voile-titre { color: #b6f2ec; text-shadow: 0 0 18px rgba(120, 230, 220, .55); }
+#pc-cat-couleurs .pc-voile-accroche { color: #fff3e6; }
+#pc-cat-couleurs .pc-voile-orn { color: currentColor; }
+#pc-gouts .pc-voile { color: #fbeedd; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(88, 36, 120, .72), rgba(43, 18, 54, .93)); }
+#pc-gouts .pc-voile-titre { color: var(--or); text-shadow: 0 0 18px rgba(255, 207, 90, .55); }
+#pc-gouts .pc-voile-orn { color: var(--or); }
+.pc-voile-genre { font: italic 700 clamp(.72rem, 1.6vw, .88rem)/1.2 var(--texte); letter-spacing: .14em; text-transform: uppercase; color: #ffe4a8; }
+.pc-cadre:hover .pc-voile-genre, .pc-cadre:focus-within .pc-voile-genre, .pc-cadre.touche .pc-voile-genre { transition-delay: .1s; }
+@media (max-width: 560px) { .pc-voile-genre { font-size: .7rem; } }
+
+/* Portrait de la personnalité : voile bordeaux et or */
+#pc-personnalite .pc-voile { color: #fff1de; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(150, 32, 24, .72), rgba(56, 10, 8, .94)); }
+#pc-personnalite .pc-voile-titre { color: var(--or); text-shadow: 0 0 18px rgba(255, 207, 90, .55); }
+#pc-personnalite .pc-voile-orn { color: var(--or); }
