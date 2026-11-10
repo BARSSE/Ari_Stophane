@@ -1078,3 +1078,10 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ferme(); });
   maj();
 })();
+
+/* Portrait chinois : au toucher, le texte de l'image reste affiché jusqu'à ce qu'on touche ailleurs */
+document.addEventListener('touchstart', (e) => {
+  const f = e.target.closest && e.target.closest('.pc-cadre[tabindex]');
+  document.querySelectorAll('.pc-cadre.touche').forEach((x) => { if (x !== f) x.classList.remove('touche'); });
+  if (f) f.classList.add('touche');
+}, { passive: true });
